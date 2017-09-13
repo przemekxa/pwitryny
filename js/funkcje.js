@@ -14,8 +14,10 @@ function poleProstokata(a, b) {
 
 document.write(poleProstokata(3, 4) + "cm<sup>2</sup>");
 
+var btnLicz = document.getElementById("btnLicz");
+btnLicz.onclick = licz;
 
-function licz(a, b) {
+function licz() {
     var a = document.getElementById("szerokosc").value;
     var b = document.getElementById("dlugosc").value;
     var pole = a * b;
