@@ -66,6 +66,6 @@ console.log(liczby);
 
 /*
 Utwórz formularz z loginem (text) i hasłem (password).
-Zapisz dane w tablicy. Wyświetl w nagłóhu H2.
+Zapisz dane w tablicy. Wyświetl w nagłówku H2.
 Użytkownik podaje również kolor w jakim tekst ma być wyświetlony.
 */
