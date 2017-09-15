@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Funkcje - zadanie domowe</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <h1>Pole i obwód stożka</h1>
+    <form>
+    Promień:<br /><input type="number" name="promien" /><br /><br />
+    Wysokość:<br /><input type="number" name="wysokosc" /><br /><br />
+    Co obliczyć:<br />
+    <input type="radio" name="typ" value="obwod"> Obwod<br />
+    <input type="radio" name="typ" value="pole"> Pole<br />
+    <input type="radio" name="typ" value="objetosc"> Objętość<br /><br />
+
+    <button type="button" onclick="licz(this.form)">Licz!</button><br /><br />
+    </form>
+    <div id="wynik"></div>
+
+    <script src="js/funkcje-zd1.js"></script>
+</body>
+</html>
