@@ -20,7 +20,7 @@ function licz(f) {
                 wynik.innerHTML = "Pole: " + promien * promien * Math.PI;
                 break;
             case "objetosc":
-                wynik.innerHTML = "Objętość: " + promien * promien * Math.PI * wysokosc;
+                wynik.innerHTML = "Objętość: " + promien * promien * Math.PI * wysokosc / 3;
                 break;
         }
     } else {
