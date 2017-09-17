@@ -14,14 +14,17 @@ function licz(f) {
         wysokosc = parseFloat(wysokosc);
         switch (typ) {
             case "obwod":
-                wynik.innerHTML = "Obwód podstawy: " + 2 * promien * Math.PI;
+                var wyliczone = 2 * promien * Math.PI;
+                wynik.innerHTML = "Obwód podstawy: " + Math.round(wyliczone);
                 break;
             case "pole":
                 var l = Math.sqrt( Math.pow(promien, 2) + Math.pow(wysokosc, 2) );
-                wynik.innerHTML = "Pole powierzchni całkowitej: " + promien * Math.PI * ( promien + l );
+                var wyliczone = promien * Math.PI * ( promien + l );
+                wynik.innerHTML = "Pole powierzchni całkowitej: " + Math.round(wyliczone);
                 break;
             case "objetosc":
-                wynik.innerHTML = "Objętość: " + promien * promien * Math.PI * wysokosc / 3;
+                var wyliczone = promien * promien * Math.PI * wysokosc / 3;
+                wynik.innerHTML = "Objętość: " + Math.round(wyliczone);
                 break;
         }
     } else {
