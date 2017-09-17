@@ -14,10 +14,11 @@ function licz(f) {
         wysokosc = parseFloat(wysokosc);
         switch (typ) {
             case "obwod":
-                wynik.innerHTML = "Obwód: " + 2 * promien * Math.PI;
+                wynik.innerHTML = "Obwód podstawy: " + 2 * promien * Math.PI;
                 break;
             case "pole":
-                wynik.innerHTML = "Pole: " + promien * promien * Math.PI;
+                var l = Math.sqrt( Math.pow(promien, 2) + Math.pow(wysokosc, 2) );
+                wynik.innerHTML = "Pole powierzchni całkowitej: " + promien * Math.PI * ( promien + l );
                 break;
             case "objetosc":
                 wynik.innerHTML = "Objętość: " + promien * promien * Math.PI * wysokosc / 3;
