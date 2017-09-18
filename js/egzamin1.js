@@ -61,7 +61,7 @@ elPotegtowanie.onclick = function() {
     var b = elWykladnik.value;
     if(!isNaN(a) && !isNaN(b) && a!= "" && b !="") {
         a = Number(a);
-        b = Number(b);
+        b = parseInt(b);
         if(b>0) {
             elWynik2.innerHTML = "Wynik działania wynosi: " + Math.pow(a, b);
         } else {
