@@ -1,4 +1,6 @@
 //document.write("A");
+function br(n) { if(n == undefined) document.write("<br />")
+    else for(var i=0; i<n; i++) document.write("<br />") }
 
 //
 // Pętla for
@@ -20,7 +22,7 @@ for(var i=0; i<10; i++) {
     document.write(l + "<br />");
 }
 
-document.write("<br /><br />");
+br(2);
 
 for(var i=0; i<10; i++) {
     if(i == 0) {
@@ -30,7 +32,7 @@ for(var i=0; i<10; i++) {
     }
 }
 
-document.write("<br /><br />");
+br(2);
 
 
 
@@ -56,7 +58,7 @@ for(var i=a; i<=b; i++) {
 }
 */
 
-document.write("<br /><br />");
+br(2);
 
 
 
@@ -72,7 +74,7 @@ while(i++ < 5) {
     document.write(i + "<br />");
 }
 
-document.write("<br /><br />");
+br(2);
 
 /*
 
@@ -152,7 +154,7 @@ elPrzycisk.onclick = function() {
         console.log(wartosc);
     }
 }
-document.write("<br /><br /><br />");
+br(3);
 
 
 
@@ -174,7 +176,7 @@ for(var i=0; i<5; i++) {
     }
 
 }
-document.write("<br /><br />");
+br(2);
 
 
 
@@ -190,7 +192,60 @@ for(var i=1; i<20; i++) {
 }
 
 
-document.write("<br /><br />");
+br(2);
+
+
+
+
+
+
+//ZAD podaj z klawiatury maksymalną ilość gwiazdek.
+// Zrób pętlę, w której zabezpieczysz przed podaniem błędnych danych
+
+/*
+
+var gwiazdki;
+do {
+    gwiazdki = prompt("Podaj ilość gwiazdek");
+} while(isNaN(gwiazdki) || gwiazdki<=0);
+
+for(var i=1; i<=gwiazdki; i++) {
+    for(var j=0; j<i; j++) {
+        document.write("*");
+    }
+    document.write("<br />");
+}
+*/
+
+br(2);
+
+
+//ZAD user podaje login i haslo w formularzu. Jesli login to "admin", a haslo to "tajne@123",
+//to na ekrane wyślwitli się w kolorze czerwonym poprawne haslo.
+
+document.write('<input type="text" id="login" value="login" />');
+document.write('<input type="password" id="passwd" value="haslo" />');
+document.write('<button type="button" id="sprawdz">Sprawdź</button>');
+document.write('<div id="wynik"></div>');
+
+var elLogin = document.getElementById("login");
+var elHaslo = document.getElementById("passwd");
+var elSprawdz = document.getElementById("sprawdz");
+var elWynik = document.getElementById("wynik");
+
+elSprawdz.onclick = function() {
+    if(elLogin.value == "admin" && elHaslo.value == "tajne@123") {
+        elWynik.style.color = "red";
+        elWynik.innerHTML = "Poprawne hasło";
+    } else {
+        elWynik.style.color = "green";
+        elWynik.innerHTML = "Błędne hasło";
+    }
+}
+
+br(4);
+
+
 
 
 
@@ -200,3 +255,17 @@ document.write("<br /><br />");
 //
 // pętla for-each
 //
+// talica.forEach( funckja(wartość, indeks) )
+
+
+var tab = ["Anna", "Jacek", "Janusz", "Adrian"];
+
+for(var i=0; i<tab.length; i++) document.write(tab[i] + " ");
+
+br();
+
+function p(a, b) {                                      // a - wartość; b - indeks
+    document.write("Indeks " + b + " - " + a + ", ");
+}
+
+tab.forEach(p);
