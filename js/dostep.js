@@ -79,10 +79,15 @@ naglowek2[1].className = "niebieski";
 document.write("<button type='button' onclick='naCzerwony()'>Czerwony</button>");
 
 function naCzerwony() {
+    /*
     var elementy = document.getElementsByTagName("li");
     for (var i = 0; i<elementy.length; i++) {
-        elementy[i].classList = "czerwony";
+        elementy[i].className = "czerwony";
     }
+    */
+    document.querySelectorAll("li").forEach(function(e, i) {
+        e.className = "czerwony";
+    })
 }
 
 
