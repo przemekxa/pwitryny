@@ -92,6 +92,22 @@ function naCzerwony() {
 
 
 
+var elPrzycisk = document.getElementById("przycisk");
+
+var klub = document.getElementsByName("sport");
+
+elPrzycisk.onclick = function() {
+    console.log(klub);
+
+//    for(var i=0; i<klub.length; i++) {
+//        klub[i].className = "niebieski";
+//    }
+
+    klub.forEach( function(e, index) {
+        e.className = "niebieski";
+    })
+}
+
 
 
 
