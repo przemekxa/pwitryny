@@ -76,7 +76,6 @@ var naglowek2 = document.querySelectorAll("h2");
 naglowek2[1].className = "niebieski";
 
 
-document.write("<button type='button' onclick='naCzerwony()'>Czerwony</button>");
 
 function naCzerwony() {
     /*
@@ -99,9 +98,9 @@ var klub = document.getElementsByName("sport");
 elPrzycisk.onclick = function() {
     console.log(klub);
 
-//    for(var i=0; i<klub.length; i++) {
-//        klub[i].className = "niebieski";
-//    }
+    //for(var i=0; i<klub.length; i++) {
+    //    klub[i].className = "niebieski";
+    //}
 
     klub.forEach( function(e, index) {
         e.className = "niebieski";
@@ -111,11 +110,52 @@ elPrzycisk.onclick = function() {
 
 
 
+//
+// previousElementSibling
+// nextElementSibling
+//
+
+// previousSibling - liczy spacje, entery, taby itd.
+
+var poczatkowy = document.getElementById("s2");
+var poprzedni = poczatkowy.previousElementSibling;
+var nastepny = poczatkowy.nextElementSibling;
+
+poczatkowy.className = "niebieski";
+poprzedni.className = "niebieski";
+nastepny.classList = "niebieski";
+
+
+//
+// firstElementChild
+// lastElementChild
+//
+// !! bez Element liczy sppacje, entery, taby itd.
+//
+
+
+var lista = document.getElementsByTagName("ul")[1];
+
+var pierwszy = lista.firstElementChild;
+pierwszy.setAttribute("class", "czerwony");
+
+// setAttbibute - ustaw HTMLowy atrybut
+
+var ostatni = lista.lastElementChild;
+ostatni.setAttribute("class", "czerwony");
 
 
 
 
 
+//
+// FORMULARZ
+//
+// Zmien 1. element input na button
+//
 
-
+var formularz = document.getElementsByTagName("form")[0];
+var input0 = formularz.firstElementChild;
+input0.setAttribute("type", "button");
+input0.setAttribute("value", "Wyślij");
 
