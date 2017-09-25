@@ -157,5 +157,11 @@ ostatni.setAttribute("class", "czerwony");
 var formularz = document.getElementsByTagName("form")[0];
 var input0 = formularz.firstElementChild;
 input0.setAttribute("type", "button");
-input0.setAttribute("value", "Wyślij");
+//input0.setAttribute("value", "Wyślij");
+input0.value = "WYŚLIJ";                    //drugi sposób
+
+
+//Połącz ze stroną szkoły ZSK
+var a = document.getElementsByTagName("a")[0];
+a.setAttribute("href", "http://zsk.poznan.pl");
 
