@@ -1,6 +1,7 @@
 /*
 
 --> FLAGI:
+g - global (do grup?)
 i - nie zwracanie uwagi na wielkość liter
 
 --> ZNAKI:
