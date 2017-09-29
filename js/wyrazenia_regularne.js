@@ -22,6 +22,9 @@ $ - koniec regexa
 \\ - backslash
 \. - kropka
 
+
+https://regex101.com/
+
 */
 
 /*
