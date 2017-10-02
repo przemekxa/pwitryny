@@ -169,3 +169,21 @@ pass2.addEventListener("blur", pass);
 regulamin.addEventListener("change", sprawdzRegulamin);
 popraw.addEventListener("click", poprawDane);
 przycisk.addEventListener("click", wypiszDane);
+
+
+
+
+/*
+
+ZD
+
+User podaje z klawiatury nazwy zdjęć z rozszerzeniami.
+Nazwy nie mogą mieć cyfr, mogą być pisane tylko małymi literami
+oraz nie mogą mieć znaków specjalnych oprócz kropki.
+Wszystkie zdjęcia z rozszerzeniem .jpg zapisz w tablicy o nazwie
+jpg, a zdjęcia z .bmp w tablicy bmp. Posortuj tablicę rosnąco
+i wyświetl na ekranie zawartość.
+
+Podaje w formularzu; rozdziela spacjami.
+
+*/
