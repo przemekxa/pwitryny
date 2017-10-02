@@ -1,7 +1,7 @@
 /*
 
 --> FLAGI:
-g - global (do grup?)
+g - global (do grup), wyszukuje wszystkie dopasowania
 i - nie zwracanie uwagi na wielkość liter
 
 --> ZNAKI:
@@ -12,6 +12,7 @@ $ - koniec regexa
 ? - może ale nie musi być
 . - dowolny jeden znak (jak ? w innnych)
 {} - zakres od do
++ - zaznacza słowo
 
 --> ZNAKI SPECJALNE:
 \s - spacja
@@ -107,4 +108,13 @@ elKod.oninput = function() {
     }
 }
 
+
+
+
+
+
+var regex = /\w+\.mp3/g;
+var pliki = "plik.mp3 arkusze.csv szkola.mp3 zsk.mp3";
+var sprawdz = pliki.match(regex)
+console.log(sprawdz);
 
