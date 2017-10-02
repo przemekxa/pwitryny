@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Zdarzenia</title>
+    <link rel="stylesheet" href="css/zdarzenia_regex.css" />
+</head>
+<body>
+
+    <form>
+    <fieldset>
+
+        <legend>Rejestracja</legend>
+
+        <div id="blok"></div><br />
+        <input type="text" id="imie" placeholder="Imię" autofocus /><br /><br />
+        <input type="text" id="nazwisko" placeholder="Nazwisko" /><br /><br />
+        <input type="text" id="login" placeholder="Login" /><br /><br />
+        <input type="email" id="mail1" placeholder="Adres poczty" /><br /><br />
+        <input type="email" id="mail2" placeholder="Powtórz adres poczty" disabled /><br /><br />
+        <input type="password" id="pass1" placeholder="Hasło" /><br /><br />
+        <input type="password" id="pass2" placeholder="Powtórz hasło" disabled/><br /><br />
+        Urodziny: <input type="date" id="data" /><br /><br />
+        <input type="checkbox" id="regulamin" />Akceptuję regulamin<br /><br />
+
+        <button type="button" id="przycisk" disabled>Wyślij</button>
+        <button type="button" id="popraw">Popraw dane</button>
+
+    </fieldset>
+    </form>
+
+    <script src="js/zdarzenia_regex.js"></script>
+</body>
+</html>
