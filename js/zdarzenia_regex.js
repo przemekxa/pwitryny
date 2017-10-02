@@ -14,35 +14,55 @@ var blok = document.getElementById("blok");
 
 blok.style.color = "red";
 
-//window.onload = function() {
-//    alert("Witaj");
-//}
+var regImie = /^[A-z]{2,16}$/;
+var regNazwisko = /^[A-z]{2,30}(\-[A-z]{2,30})?$/;
+var regLogin = /^(\w|\W){4,25}$/;
+var regMail = /^[A-z](\w|\.|\-){0,20}@(\w{1,20}\.){1,3}[A-z]{1,3}$/;
+var regPass = /^((?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[\W|_]).{8,20}$)/;
 
-//imie.onblur = sprawdz();
-
-
-/*
-
-function sprawdz() {
-    if(imie.value.length >= 2 && this.value.length < 15) {
+function sprawdzImie() {
+    if(regImie.test(imie.value)) {
         blok.textContent = "";
-        //imie.setAttribute("disabled", "");
+        imie.disabled = true;
     } else {
-        blok.textContent = "Błędne dane";
+        imie.focus();
+        blok.textContent = "Wpisz poprawne imię";
     }
 }
 
-*/
+function sprawdzNazwisko() {
+    if(regNazwisko.test(nazwisko.value)) {
+        blok.textContent = "";
+        nazwisko.disabled = true;
+    } else {
+        nazwisko.focus();
+        blok.textContent = "Wpisz poprawne nazwisko";
+    }
+}
 
-function sprawdz() {
-    var element = document.getElementById(this.id);
-    if(element.value.length >= 2 && element.value.length < 15) {
+function sprawdzLogin() {
+    if(regLogin.test(login.value)) {
+        blok.textContent = "";
+        login.disabled = true;
+    } else {
+        login.focus();
+        blok.textContent = "Wpisz poprawny login";
+    }
+}
+
+function blokujMail() {
+
+    if(regMail.test(mail1.value)) {
         blok.textContent = "";
         this.disabled = true;
+        mail2.disabled = false;
+        mail2.focus();
     } else {
-        element.focus();
-        blok.textContent = "Błędne dane";
+        mail1.focus();
+        blok.textContent = "Wpisz poprawny adres email";
     }
+
+
 }
 
 
@@ -60,11 +80,19 @@ function mail() {
     }
 }
 
-function blokujMail() {
-    blok.textContent = "";
-    this.disabled = true;
-    mail2.disabled = false;
-    mail2.focus();
+
+
+function blokujPass() {
+    if(regPass.test(pass1.value)){
+        blok.textContent = "";
+        this.disabled = true;
+        pass2.disabled = false;
+        pass2.focus()
+        ;
+    } else {
+        pass1.focus();
+        blok.textContent = "Wpisz poprawnie hasło";
+    }
 }
 
 function pass() {
@@ -81,12 +109,7 @@ function pass() {
     }
 }
 
-function blokujPass() {
-    blok.textContent = "";
-    this.disabled = true;
-    pass2.disabled = false;
-    pass2.focus();
-}
+
 
 function sprawdzRegulamin() {
     if(regulamin.checked) przycisk.disabled = false;
@@ -136,9 +159,9 @@ function wypiszDane() {
 
 
 
-imie.addEventListener("blur", sprawdz);
-nazwisko.addEventListener("blur", sprawdz);
-login.addEventListener("blur", sprawdz);
+imie.addEventListener("blur", sprawdzImie);
+nazwisko.addEventListener("blur", sprawdzNazwisko);
+login.addEventListener("blur", sprawdzLogin);
 mail1.addEventListener("blur", blokujMail);
 mail2.addEventListener("blur", mail);
 pass1.addEventListener("blur", blokujPass);
