@@ -138,6 +138,7 @@ console.log( platnosci.suma() );
 
 
 
+
 //
 // konstruktory
 // !! z dużych liter
@@ -163,3 +164,164 @@ var jan = new Osoba("Jan", "Kowalski");
 var anna = new Osoba("Anna", "Nowak");
 
 console.log(jan);
+
+
+
+
+var hotel = new Object();
+hotel.nazwa = "Hotel Poznań";
+hotel.pokoje = 100;
+hotel.pokojeZarezerwowane = 30;
+hotel.silownia = true;
+hotel.rodzajePokoi = ["pojedynczy", "podwójny", "apartament"];
+hotel.pokojeWolne = function() {
+    return this.pokoje - this.pokojeZarezerwowane;
+}
+
+//console.log( hotel.pokojeWolne() );
+
+
+
+
+
+
+
+//
+// konstruktor obiektów
+//
+
+
+function Hotel(nazwa, pokoje, pokojeZarezerwowane) {
+    this.nazwa = nazwa;
+    this.pokoje = pokoje;
+    this.pokojeZarezerwowane = pokojeZarezerwowane;
+    this.wolnePokoje = function() {
+        return this.pokoje - this.pokojeZarezerwowane;
+    };
+}
+
+var lech = new Hotel("Hotel Lech", 104, 20);
+var merkury = new Hotel("Hotel Merkury", 39, 10);
+//console.log( "Wolne pokoje w " + lech.nazwa + ": " + lech.wolnePokoje() );
+//console.log( "Wolne pokoje w " + merkury.nazwa + ": " + merkury.wolnePokoje() );
+
+
+
+//
+// ZADANIE
+// Utwórz konstruktor o nazwie pies i parametrach: imie, rasa, waga, ulubione zajęcia,
+// które mogą mieć wiele wartości. Utwórz trzy obiekty o nazwach: Azor, Eddy, Saba
+//
+
+
+
+function Pies(imie, rasa, waga, zajecia) {
+    this.imie = imie;
+    this.rasa = rasa;
+    this.waga = waga;
+    this.zajecia = zajecia;
+}
+
+var azor = new Pies("Azor", "bokser", 10, ["spanie", "spacery"]);
+var eddy = new Pies("Eddy", "labrador", 8, ["spanie", "spacery", "aportowanie"]);
+var saba = new Pies("Saba", "bokser", 12, ["spanie", "bieganie"]);
+
+var psy = [azor, eddy, saba];
+eddy.zajecia.push("bieganie");
+
+//console.log(eddy.zajecia);
+//console.log(psy);
+
+document.write("<br /><br /><br />");
+
+for(var i=0; i<psy.length; i++) {
+    var rozmiar;
+    if(psy[i].waga > 10) rozmiar = "duży"; else rozmiar = "mały";
+    document.write(
+        "Pies <span style='color:red'>" +
+        psy[i].imie + "</span> to " +
+        rozmiar + " pies<br />");
+}
+
+document.write("<br /><br />");
+
+
+for(e in eddy) {
+    if(e == "imie" || e == "rasa") {
+        document.write(eddy[e] + " ");
+    }
+}
+
+var tab = ["Jan", "Nowak", "Poznań"];
+for(i in tab) {
+    console.log(tab[i]);
+}
+
+document.write("<br /><br />");
+
+
+
+
+
+
+//
+// prototype
+//
+
+function Pole(a, b, c, d) {
+    return a*b;
+}
+
+console.log( Pole.length );
+console.log( Pole.constructor );
+console.log( Pole.prototype );
+
+
+function Uczen(imie, nazwisko) {
+    this.imie = imie;
+    this.nazwisko = nazwisko;
+}
+
+var adrian = new Uczen("Adrian", "Nowak");
+
+Uczen.prototype.narodowosc = "polska";
+Uczen.prototype.wyswietl = function() {
+    return "<b>Imię:</b> " + this.imie +
+        " <b>Nazwisko:</b> " + this.nazwisko +
+        " <b>Narodowość:</b> " + this.narodowosc + "<br />";
+}
+
+document.write( adrian.wyswietl() );
+console.log( adrian.constructor );
+console.log( adrian.constructor.prototype.narodowosc );
+
+console.log( adrian.hasOwnProperty("imie") );               // true - właściwość w konstruktorze
+console.log( adrian.hasOwnProperty("narodowosc") );         // false - właściwość w prototype
+
+
+//
+// ZADANIE
+// Utwórz konstruktor rower, w którtym będą właściwości marka, kolor.
+// Wyświetl wszystkie dane za pomocą metody wyswieltRower. Wykorzystaj for in.
+// Utwórz prototype, wktórym będzie zapisana ilość kół.
+//
+
+
+function Rower(marka, kolor) {
+    this.marka = marka;
+    this.kolor = kolor;
+}
+
+Rower.prototype.iloscKol = 2;
+Rower.prototype.wyswietlRower = function() {
+    for(i in this) {
+        if(i != "wyswietlRower") document.write(this[i] + " ");
+    }
+}
+
+var rowerowy = new Rower("Rowerowy", "czerwony");
+console.log(rowerowy.iloscKol);
+rowerowy.wyswietlRower();
+
+
+
