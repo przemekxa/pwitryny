@@ -1,0 +1,14 @@
+* {
+    font-family: sans-serif;
+}
+
+#tab1, th, td {
+    border: 1px solid #8d8d8d;
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}

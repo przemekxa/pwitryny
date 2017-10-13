@@ -25,10 +25,12 @@ jQuery(document).ready(function() {
 
 
     $("#zmien_kolor").click(function() {
-
         $("p").css("color", "lime");
-
     });
+
+
+    $("a").css("color", "green");
+    $("#link a").css("color", "red");
 
 
 });
